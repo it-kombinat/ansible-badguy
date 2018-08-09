@@ -1,0 +1,3 @@
+---
+badguy_image: stackware/badguy:latest
+badguytgt: localhost

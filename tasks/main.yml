@@ -1,0 +1,33 @@
+---
+# tasks file for ansible-docker-base
+- name: Ensure Software is installed
+  yum:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - docker
+    - python-pip
+
+- name: Installed docker-py
+  pip:
+    name: "{{ item }}"
+    state: latest
+  loop:
+    - docker-py
+
+- name: Ensure docker is running and enabled
+  systemd:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Starting Docker Badguy container
+  docker_container:
+    name: badguy
+    image: '{{ badguy_image }}'
+    state: started
+    restart_policy: always
+    command: ["{{ badguytgt }}"]
+  when: 
+    - badguy_image is defined
+    - badguytgt is defined
