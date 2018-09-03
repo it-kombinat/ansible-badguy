@@ -3,12 +3,12 @@
 Ansible-Badguy
 =========
 
-D
 
 Requirements
 ------------
 
  - Ansible >= 2.4
+ - Docker and docker-py
 
 Role Variables
 --------------
@@ -16,14 +16,8 @@ Role Variables
 
 | Name           | Default Value | Description                        |
 | -------------- | ------------- | -----------------------------------|
-| `syslog_gen_rsyslog` | syslog-gen-rsyslog  | Name of the Container |
-| `syslog_gen_hec` | syslog-gen-hec  | Name of the Container |
-
-
-License
--------
-
-BSD
+| `badguy_image` | stackware/badguy:latest  | Container Image Name |
+| `badguytgt` | localhost  | IP address or FQDN of the Badguy Target |
 
 Author Information
 ------------------
