@@ -27,7 +27,7 @@
     image: '{{ badguy_image }}'
     state: started
     restart_policy: always
-    command: ["{{ badguytgt }}"]
+    command: ["{{ badguytgt }}", "{{ badguytgt_port }}"]
   when: 
     - badguy_image is defined
     - badguytgt is defined
