@@ -18,6 +18,7 @@ Role Variables
 | -------------- | ------------- | -----------------------------------|
 | `badguy_image` | stackware/badguy:latest  | Container Image Name |
 | `badguytgt` | localhost  | IP address or FQDN of the Badguy Target |
+| `badguytgt_port` | 22  | TCP Port of the Badguy Target |
 
 Author Information
 ------------------
